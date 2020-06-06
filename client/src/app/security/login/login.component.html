@@ -1,0 +1,92 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .input-field input[type=date]:focus+label,
+    .input-field input[type=text]:focus+label,
+    .input-field input[type=email]:focus+label,
+    .input-field input[type=password]:focus+label {
+        color: #545454;
+    }
+
+    .input-field input[type=date]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=email]:focus,
+    .input-field input[type=password]:focus {
+        border-bottom: 2px solid #545454;
+        box-shadow: none;
+    }
+</style>
+
+<br />
+<div class="z-depth-1 grey lighten-4 row center"
+    style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+    <form class="col s12" [formGroup]="fgValidation">
+        <div class='row'>
+            <div class='col s12'>
+                <h2>Login Form</h2>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='input-field col s12'>
+                <input class='validate' formControlName="username" type='email' name='email' id='email' />
+                <label for='email'>Enter your email</label>
+                <div class="warning-validation"
+                    *ngIf="fg.username.errors && (fg.username.dirty || fg.username.touched)">
+                    <strong *ngIf="fg.username.errors.required">
+                        Este campo es requerido.
+                    </strong>
+                    <strong *ngIf="fg.username.errors.minlength">
+                        Este campo debe tener como mínimo 5 caracteres.
+                    </strong>
+                    <strong *ngIf="fg.username.errors.email">
+                        Este campo debe ser un email.
+                    </strong>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='input-field col s12'>
+                <input class='validate' formControlName="password" type='password' name='password' id='password' />
+                <label for='password'>Enter your password</label>
+
+                <div class="warning-validation"
+                    *ngIf="fg.password.errors && (fg.password.dirty || fg.password.touched)">
+                    <strong *ngIf="fg.password.errors.required">
+                        Este campo es requerido.
+                    </strong>
+                    <strong *ngIf="fg.password.errors.minlength">
+                        Este campo debe tener como mínimo 5 caracteres.
+                    </strong>
+                    <strong *ngIf="fg.password.errors.maxlength">
+                        Este campo puede ser máximo de 12 caracteres.
+                    </strong>
+                </div>
+            </div>
+            <label style='float: right;'>
+            </label>
+        </div>
+
+        <br />
+        <div class='row'>
+            <button type='submit' name='btn_login' (click)="loginClickEvent()" class='col s12 btn btn-large waves-effect indigo'>Login</button>
+        </div>
+    </form>
+</div>

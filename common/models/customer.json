@@ -1,0 +1,49 @@
+{
+  "name": "Customer",
+  "plural": "Customers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "document": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "birthdate": {
+      "type": "date"
+    },
+    "credit": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "delivery": {
+      "type": "hasMany",
+      "model": "Delivery",
+      "foreignKey": "customer_id",
+      "options": {
+        "disableInclude": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

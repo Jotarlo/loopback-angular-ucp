@@ -1,0 +1,13 @@
+{
+  "db": {
+    "host": "cluster0-lqcr6.mongodb.net",
+    "port": 127017,
+    "url": "mongodb+srv://ucp_user:KuEDidj9zkFTeC6c@cluster0-lqcr6.mongodb.net/lbCustomerDB?retryWrites=true&w=majority",
+    "database": "lbCustomerDB",
+    "password": "KuEDidj9zkFTeC6c",
+    "name": "db",
+    "user": "ucp_user",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}

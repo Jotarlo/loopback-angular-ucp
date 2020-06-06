@@ -1,0 +1,43 @@
+{
+  "name": "Delivery",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "deliveryDate": {
+      "type": "date",
+      "required": true
+    },
+    "paymentMethod": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "products": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": "customer_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

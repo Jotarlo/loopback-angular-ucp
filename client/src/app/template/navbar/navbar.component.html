@@ -1,0 +1,11 @@
+<nav class="blue">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li *ngIf="!isLogged"><a routerLink="/security/login">Login</a></li>
+        <li *ngIf="isLogged"><a routerLink="/security/logout">Logout</a></li>
+        <li *ngIf="isLogged"><a href="badges.html">Customers</a></li>
+        <li *ngIf="isLogged"><a href="collapsible.html">Deliveries</a></li>
+      </ul>
+    </div>
+  </nav>
